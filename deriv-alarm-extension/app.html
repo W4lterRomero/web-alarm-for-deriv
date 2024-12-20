@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deriv WebSocket Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Título -->
+        <header>
+            <h2>Alarmas Deriv</h2>
+        </header>
+
+        <!-- Conexión y selección de símbolo -->
+        <div class="connection-section">
+            <div class="symbol-selection">
+                <label for="symbolSelect">Seleccionar Símbolo:</label>
+                <select id="symbolSelect">
+                    <option value="R_75">Volatility 75 Index</option>
+                    <option value="R_100">Volatility 100 Index</option>
+                    <option value="R_25">Volatility 25 Index</option>
+                    <option value="R_50">Volatility 50 Index</option>
+                </select>
+            </div>
+            <div class="connection-buttons">
+                <button id="connectBtn">Conectar</button>
+                <button id="disconnectBtn">Desconectar</button>
+            </div>
+        </div>
+
+        <!-- Estado de conexión -->
+        <div id="connectionStatus" class="status disconnected">Desconectado</div>
+
+        <!-- Sección de alarmas -->
+        <div class="alarm-section">
+            <h3>Configurar Alarma</h3>
+            <div class="alarm-controls">
+                <label for="targetPrice">Precio Objetivo:</label>
+                <input type="number" id="targetPrice" step="0.01" />
+                <label>
+                    <input type="radio" name="condition" value="greater" checked /> Mayor que
+                </label>
+                <label>
+                    <input type="radio" name="condition" value="less" /> Menor que
+                </label>
+                <button id="addAlarmBtn">Agregar Alarma</button>
+            </div>
+        </div>
+
+        <!-- Sección de precio actual y historial -->
+        <div class="price-section">
+            <h3><span id="currentPrice" class="price">-</span></h3>
+            <div id="priceHistory">
+                <h4>Historial de Precios:</h4>
+                <div id="prices"></div>
+            </div>
+        </div>
+
+        <!-- Sección de alarmas activas -->
+        <div class="active-alarms">
+            <h3>Alarmas Activas:</h3>
+            <div id="alarmsList"></div>
+        </div>
+
+        <!-- Sonido de alarma -->
+        <audio id="alarmSound" src="popsound.mp3" preload="auto"></audio> <!-- Archivo de audio -->
+    </div>
+
+    <!-- Vinculación con el archivo JS -->
+    <script src="app.js" defer></script>
+</body>
+</html>

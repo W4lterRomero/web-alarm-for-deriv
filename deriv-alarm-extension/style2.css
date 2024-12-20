@@ -1,0 +1,266 @@
+/* Estilo global */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Fondo oscuro */
+    color: #E1E1E1; /* Blanco suave para el texto */
+}
+
+/* Títulos */
+h2, h3, h4 {
+    color: #00B0FF; /* Azul brillante para los títulos */
+    text-align: center;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Encabezado */
+header {
+    margin-bottom: 20px;
+}
+
+/* Sección de conexión */
+.connection-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.symbol-selection select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #66CCFF; /* Azul suave para los bordes */
+    border-radius: 4px;
+    background-color: #333333; /* Fondo oscuro para el select */
+    color: #E1E1E1; /* Blanco suave */
+}
+
+.connection-buttons button {
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #00B0FF; /* Azul brillante para los botones */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.connection-buttons button:hover {
+    background-color: #1E88E5; /* Azul ligeramente más oscuro para hover */
+}
+
+#connectionStatus {
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.connected {
+    background-color: #66CCFF; /* Azul suave para el estado conectado */
+    color: #121212; /* Fondo oscuro para texto */
+}
+
+.disconnected {
+    background-color: #555555; /* Gris para desconectado */
+    color: #121212; /* Texto oscuro */
+}
+
+/* Sección de Alarmas */
+.alarm-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #1C1C1C; /* Fondo oscuro */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.alarm-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.alarm-controls label {
+    margin: 5px;
+    color: #A1A1A1; /* Gris claro para las etiquetas */
+}
+
+#targetPrice {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #66CCFF; /* Azul suave para bordes */
+    border-radius: 4px;
+    width: 150px;
+    background-color: #333333; /* Fondo oscuro */
+    color: #E1E1E1; /* Texto claro */
+}
+
+button#addAlarmBtn {
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #00B0FF; /* Azul brillante para agregar alarmas */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button#addAlarmBtn:hover {
+    background-color: #1E88E5; /* Azul ligeramente más oscuro para hover */
+}
+
+/* Sección de Precios */
+.price-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #1C1C1C; /* Fondo oscuro */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00B0FF; /* Azul brillante para el precio */
+}
+
+#priceHistory {
+    margin-top: 15px;
+}
+
+#prices {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #A1A1A1; /* Gris claro para el historial de precios */
+}
+
+/* Sección de Alarmas Activas */
+.active-alarms {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #1C1C1C; /* Fondo oscuro */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+#alarmsList {
+    margin-top: 10px;
+}
+
+.alarm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #424242; /* Gris oscuro */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #E1E1E1; /* Texto claro */
+}
+
+.alarm button {
+    background-color: #FF5722; /* Naranja */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.alarm button:hover {
+    background-color: #e64a19; /* Naranja más fuerte para hover */
+}
+
+/* Sonido */
+audio {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .connection-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .symbol-selection, .connection-buttons {
+        margin-bottom: 15px;
+    }
+
+    .alarm-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #targetPrice {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .price-section, .active-alarms {
+        padding: 15px;
+    }
+
+    .alarm {
+        font-size: 12px;
+    }
+}
+
+/* Estilo para el modal (ventana emergente) */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #1C1C1C; /* Fondo oscuro para el modal */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 80%;
+    text-align: center;
+    color: #E1E1E1; /* Texto claro */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #00B0FF; /* Azul brillante */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1E88E5; /* Azul más oscuro para hover */
+}
+
+#prices {
+    max-height: 300px; /* Altura máxima */
+    overflow-y: auto;  /* Desplazamiento vertical */
+    padding: 10px;
+    border: 1px solid #424242; /* Borde gris oscuro */
+    border-radius: 5px;
+    background-color: #333333; /* Fondo oscuro */
+    color: #A1A1A1; /* Gris claro */
+}
